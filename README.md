@@ -1,47 +1,57 @@
 # Banco de Dados – Mercadinho
 
-Este projeto faz parte da atividade acadêmica de exploração dos comandos **DDL** e **DML** em SQL, a Atividade foi proposta pela Professora Tereza Cristina na UC: Banco de Dados durante o 1º Período do Curso de Análise e Desenvolvimento de Sistemas da Faculdade SENAC.
-O objetivo é criar um banco de dados para um negócio fictício, desenvolver o script SQL completo e organizar o projeto em um repositório GitHub.
+Este repositório contém a atividade acadêmica sobre **comandos DDL e DML** em SQL.  
+O objetivo é criar um banco de dados para um mercadinho fictício, com modelagem, scripts SQL e material educativo.
 
 ---
 
-## 📌 Objetivo do Projeto
-- Criar um banco de dados simples utilizando DDL e DML.
-- Aplicar conhecimentos de modelagem, criação de tabelas, chaves e relacionamentos.
-- Demonstrar a criação e manipulação de dados usando SQL.
-- Publicar o trabalho em um repositório GitHub bem organizado.
+## Objetivo do projeto
+
+- Criar um banco de dados simples (mercadinho) usando comandos **DDL** e **DML**.
+- Demonstrar modelagem, criação de tabelas, chaves e relacionamentos.
+- Inserir dados de exemplo e explicar os comandos utilizados.
+- Organizar o projeto em um repositório GitHub.
 
 ---
 
-## 🏪 Sobre o Banco de Dados – Mercadinho
+## Sobre o banco de dados
 
-O banco de dados representa um mercadinho de bairro, escolhi este negócio pois minha família possui um mercadinho e acho que posso ajudá-los dessa forma. 
-Ele é composto por cinco tabelas principais:
+O banco de dados modela um mercadinho de bairro e inclui as seguintes tabelas:
 
-- **Categorias** – tipos de produtos (alimentos, bebidas etc.)
-- **Produtos** – itens disponíveis para venda
-- **Clientes** – pessoas cadastradas no sistema
-- **Vendas** – registro de cada compra realizada
-- **ItensVenda** – produtos que fazem parte de cada venda
+- `Categorias` — tipos de produtos (ex.: Bebidas, Alimentos).
+- `Produtos` — itens disponíveis para venda.
+- `Clientes` — cadastro de clientes.
+- `Vendas` — registro de cada venda realizada.
+- `ItensVenda` — produtos que compõem cada venda.
 
-Todos os relacionamentos foram planejados para manter a integridade das informações.
+Relacionamentos principais:
 
----
-
-## 📊 Modelagem do Banco de Dados
-
-### Tabelas criadas:
-- Categorias (1 → N) Produtos  
-- Clientes (1 → N) Vendas  
-- Vendas (1 → N) ItensVenda  
-- Produtos (1 → N) ItensVenda  
-
-O esquema contém chaves primárias, estrangeiras e colunas essenciais para o gerenciamento básico do mercadinho.
+- `Categorias` 1 → N `Produtos`  
+- `Clientes` 1 → N `Vendas`  
+- `Vendas` 1 → N `ItensVenda`  
+- `Produtos` 1 → N `ItensVenda`
 
 ---
 
-## 📁 Onde está o Script SQL?
+## Arquivos do repositório
 
-O script completo encontra-se na pasta:
+- `/sql_scripts/mercadinho.sql` — script completo (DDL + DML).  
+- `conteudo_educacional.md` — explicação sobre DDL e DML.  
+- `README.md` — este arquivo.
 
+---
+
+## Como executar
+
+1. Abra seu gerenciador SQL (ex.: MySQL Workbench, HeidiSQL, DBeaver).  
+2. Abra o arquivo `/sql_scripts/mercadinho.sql`.  
+3. Execute todo o script. Ele criará o banco `mercadinho`, as tabelas e inserirá dados de exemplo.
+
+---
+
+
+## Autor / Contato
+
+- Nome: Danilo Henrique Basilio da Silva  
+- Email: danilo.silva5967574@edu.pe.senac.br
 
