@@ -28,13 +28,52 @@ CREATE TABLE CLIENTES (
     Telefone VARCHAR(15),
     Email VARCHAR(100) UNIQUE          -- Define que o Email deve ser único no banco
 );
+```
 
-2. DML: Data Manipulation Language (Linguagem de Manipulação de Dados)
+### 2. DML: Data Manipulation Language (Linguagem de Manipulação de Dados)
 
-A DML é responsável por manipular os dados contidos dentro das tabelas. Ela permite inserir, recuperar, atualizar e excluir registros (linhas).
+A DML é responsável por **manipular os dados** contidos dentro das tabelas.  
+Ela permite inserir, recuperar, atualizar e excluir registros (linhas).
 
-Comando,Propósito,Exemplo Prático (DML do Mercadinho)
-INSERT,Adiciona novos registros (linhas) a uma tabela.,INSERT INTO CLIENTES (...) VALUES (...)
-SELECT,Recupera dados de uma ou mais tabelas.,"SELECT Nome, PrecoVenda FROM PRODUTOS;"
-UPDATE,Modifica valores de dados existentes em um ou mais registros.,UPDATE PRODUTOS SET PrecoVenda = 16.28 WHERE Nome = 'Café Torrado 500g';
-DELETE,Remove registros (linhas) de uma tabela.,DELETE FROM CLIENTES WHERE Nome = 'Bruno Lima';
+## Tabela de Comandos DML
+
+| Comando | Propósito | Exemplo Prático (DML do Mercadinho) |
+|--------|-----------|--------------------------------------|
+| **INSERT** | Adiciona novos registros (linhas) a uma tabela. | `INSERT INTO CLIENTES (...) VALUES (...)` |
+| **SELECT** | Recupera dados de uma ou mais tabelas. | `SELECT Nome, PrecoVenda FROM PRODUTOS;` |
+| **UPDATE** | Modifica valores de dados existentes em um ou mais registros. | `UPDATE PRODUTOS SET PrecoVenda = 16.28 WHERE Nome = 'Café Torrado 500g';` |
+| **DELETE** | Remove registros (linhas) de uma tabela. | `DELETE FROM CLIENTES WHERE Nome = 'Bruno Lima';` |
+
+---
+
+## 2.1 Exemplo de Inserção de Dados (INSERT INTO)
+
+Este comando DML insere um novo registro na tabela **FORNECEDORES**:
+
+```sql
+INSERT INTO FORNECEDORES (FornecedorID, Nome, Telefone, Endereco) 
+VALUES (103, 'Padaria Central', '(81) 4444-5555', 'Rua Do Pão, 30');
+```
+
+## 2.2 Exemplo de Atualização de Dados (UPDATE)
+
+Este comando DML modifica o preço de um produto existente.  
+A cláusula **WHERE** é essencial para definir quais registros serão afetados:
+
+```sql
+UPDATE PRODUTOS 
+SET PrecoVenda = PrecoVenda * 1.05  -- Aumenta o preço em 5%
+WHERE Nome = 'Café Torrado 500g';   -- SOMENTE para o produto Café
+```
+
+## 2.3 Exemplo de Consulta de Dados (SELECT)
+
+Este comando DML recupera o nome do cliente e o valor total de todas as vendas realizadas por ele:
+
+```sql
+SELECT C.Nome, V.ValorTotal, V.DataHora
+FROM VENDAS V
+JOIN CLIENTES C ON V.ClienteID = C.ClienteID
+ORDER BY V.DataHora DESC;
+```
+
