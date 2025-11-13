@@ -43,4 +43,43 @@ Para recriar este banco de dados em seu ambiente:
 
 ## 📚 Conteúdo Educacional
 
-*(Esta seção será preenchida com o conteúdo educacional que explica DDL e DML, conforme solicitado no **Estágio 2, Passo 3**.)*
+## 📚 Conteúdo Educacional: DDL e DML no SQL
+
+Esta seção explica os dois grupos de comandos SQL utilizados na criação e povoamento do banco de dados do Mercadinho de Bairro.
+
+### 1. DDL (Data Definition Language)
+
+O DDL, ou **Linguagem de Definição de Dados**, é o conjunto de comandos SQL utilizados para **definir ou modificar a estrutura** (o esquema) do banco de dados. Ele lida com os *objetos* do banco, como tabelas, índices e usuários.
+
+#### Comandos DDL Comuns:
+
+| Comando | Função |
+| :--- | :--- |
+| **`CREATE`** | Cria um novo objeto no banco (ex: tabela, banco de dados, índice). |
+| **`ALTER`** | Modifica a estrutura de um objeto existente (ex: adicionar ou remover colunas). |
+| **`DROP`** | Exclui um objeto inteiro do banco (ex: deleta uma tabela). |
+
+#### 💡 Exemplo Prático: `CREATE TABLE`
+
+No projeto do Mercadinho, o comando `CREATE TABLE` foi usado para definir a estrutura de cada entidade, especificando o nome das colunas, seus tipos de dados e as restrições (como chaves).
+
+**Exemplo com a tabela `Dividas`:**
+
+```sql
+-- Comando DDL para criar a tabela de Dívidas
+CREATE TABLE Dividas (
+    DividaID INT PRIMARY KEY,               -- Chave Primária (identificador único da dívida)
+    ClienteID INT NOT NULL,                 -- Chave Estrangeira (referencia a tabela Clientes)
+    VendaID INT,                            -- Referencia a venda que gerou a dívida (opcional)
+    DataDivida DATE NOT NULL,
+    ValorDevido DECIMAL(10, 2) NOT NULL,
+    Status VARCHAR(50) NOT NULL,            -- 'Pendente' ou 'Pago'
+    FOREIGN KEY (ClienteID) REFERENCES Clientes(ClienteID),
+    FOREIGN KEY (VendaID) REFERENCES Vendas(VendaID)
+);
+
+Conceitos importantes utilizados:
+
+    PRIMARY KEY: Garante que o valor da coluna é único e não nulo.
+
+    FOREIGN KEY: Estabelece um relacionamento entre tabelas, garantindo a integridade dos dados.
