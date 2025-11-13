@@ -1,4 +1,4 @@
-# 🏦 bank_de_dados_senac
+# 🏦 Banco de Dados - Mercadinho Da Dona Edinha
 
 Este repositório contém um projeto prático de banco de dados SQL, focado na aplicação e entendimento dos comandos DDL (Data Definition Language) e DML (Data Manipulation Language).
 
