@@ -50,5 +50,5 @@ Para uma explicação mais detalhada sobre os conceitos de DDL e DML e exemplos 
 
 ---
 
-**Autor:** [Seu Nome/Usuário do GitHub]
+**Autor:** [Danilo H. B. da Silva]
 **Status:** Concluído (Etapa 1: Criação de DB e Etapa 2: Configuração de Repositório)
