@@ -51,4 +51,4 @@ Para uma explicação mais detalhada sobre os conceitos de DDL e DML e exemplos 
 ---
 
 **Autor:** [Danilo H. B. da Silva]
-**Status:** Concluído (Etapa 1: Criação de DB e Etapa 2: Configuração de Repositório)
+**UC:** [Banco de Dados: Banco de Dados DDL e DML]
